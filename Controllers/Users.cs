@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using swsec_intro_backend_dotnet.Models;
 
 namespace swsec_intro_backend_dotnet.Controllers;
 

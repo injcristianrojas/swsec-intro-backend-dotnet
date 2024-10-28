@@ -1,4 +1,4 @@
-namespace swsec_intro_backend_dotnet;
+namespace swsec_intro_backend_dotnet.Models;
 
 public class User
 {
