@@ -7,7 +7,6 @@ using swsec_intro_backend_dotnet.Models;
 namespace swsec_intro_backend_dotnet.Controllers;
 
 [ApiController]
-[Route("api/auth")]
 public class AuthController : ControllerBase
 {
     private readonly JwtHelper _jwtHelper;
@@ -19,7 +18,7 @@ public class AuthController : ControllerBase
         _context = context;
     }
 
-    [HttpPost("/login")]
+    [HttpPost("/api/v2/login")]
     public IActionResult Login([FromBody] LoginRequest request)
     {
         List<User> users = _context.Users.FromSqlRaw($"SELECT * FROM users WHERE username = '{request.Username}' AND password = '{request.Password}'").ToList();

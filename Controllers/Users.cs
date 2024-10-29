@@ -7,9 +7,7 @@ using swsec_intro_backend_dotnet.Models;
 namespace swsec_intro_backend_dotnet.Controllers;
 
 [ApiController]
-[Route("[controller]")]
 [Authorize]
-
 public class UserController : ControllerBase
 {
     private readonly AppDbContext _context;
@@ -19,7 +17,7 @@ public class UserController : ControllerBase
         _context = context;
     }
 
-    [HttpGet("/users/{type}")]
+    [HttpGet("/api/v2/users/{type}")]
     public List<User> GetByType(int type)
     {
         return _context.Users.FromSqlRaw($"SELECT * FROM users WHERE type = {type}").ToList();
