@@ -8,14 +8,15 @@ namespace swsec_intro_backend_dotnet.Helpers;
 
 public class JwtHelper
 {
-    public string GenerateToken(string userId)
+    public string GenerateToken(string userId, int userType)
     {
         var builder = WebApplication.CreateBuilder();
 
         var claims = new[]
         {
             new Claim(JwtRegisteredClaimNames.Sub, userId),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            new Claim("type", userType.ToString())
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:Secret"]));
