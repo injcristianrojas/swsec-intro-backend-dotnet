@@ -1,5 +1,7 @@
 using System.Diagnostics;
 
+namespace swsec_intro_backend_dotnet.Helpers;
+
 public class ShellCommandExecutor
 {
     public static string RunShellCommand(string command)
