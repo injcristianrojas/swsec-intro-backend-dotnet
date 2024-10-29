@@ -486,3 +486,6 @@ $RECYCLE.BIN/
 # Sqlite files
 *.db*
 *.sqlite*
+
+# CI/CD
+.sonarqube*
