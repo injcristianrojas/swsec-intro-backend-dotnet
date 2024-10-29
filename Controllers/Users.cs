@@ -22,4 +22,12 @@ public class UserController : ControllerBase
     {
         return _context.Users.FromSqlRaw($"SELECT * FROM users WHERE type = {type}").ToList();
     }
+
+    [HttpPost("/login")]
+    public ActionResult Login(User user)
+    {
+        Console.WriteLine(user.Username + "-" + user.Password);
+        List<User> users = _context.Users.FromSqlRaw($"SELECT * FROM users WHERE username = '{user.Username}' AND password = '{user.Password}'").ToList();
+        return users.Count > 0 ? Ok("Holi") : Unauthorized("UNAUTHORIZED");
+    }
 }
