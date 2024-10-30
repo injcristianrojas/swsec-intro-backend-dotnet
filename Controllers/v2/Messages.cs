@@ -22,7 +22,7 @@ public class MessageController : ControllerBase
         return _context.Messages.ToList();
     }
 
-    [HttpPost("/api/v2/messages/new")]
+    [HttpPost("/api/v2/messages/add")]
     public IActionResult PostMessage([FromBody] MessageRequest request)
     {
         _context.Add<Post>(new Post { Message = request.Text });
