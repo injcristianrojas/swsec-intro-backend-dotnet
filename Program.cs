@@ -15,8 +15,6 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(builder
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-Console.Write(builder.Configuration["JwtSettings:Secret"]);
-
 // Configure JWT Authentication
 builder.Services.AddAuthentication(options =>
 {
