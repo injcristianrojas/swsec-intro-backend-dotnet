@@ -16,7 +16,7 @@ public class MessageController : ControllerBase
     }
 
     [HttpGet("/api/v1/messages")]
-    public List<Message> GetMessages()
+    public List<Post> GetMessages()
     {
         return _context.Messages.ToList();
     }
@@ -24,7 +24,7 @@ public class MessageController : ControllerBase
     [HttpPost("/api/v1/messages/add")]
     public IActionResult PostMessage([FromBody] MessageRequest request)
     {
-        _context.Add<Message>(new Message { Text = request.Text });
+        _context.Add<Post>(new Post { Message = request.Text });
         _context.SaveChanges();
         return Ok(new { status = "OK" });
     }

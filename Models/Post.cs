@@ -1,7 +1,7 @@
 namespace swsec_intro_backend_dotnet.Models;
 
-public class Message
+public class Post
 {
     public int Id { get; set; }
-    public string Text { get; set; }
+    public string Message { get; set; }
 }
