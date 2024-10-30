@@ -24,7 +24,7 @@ public class MessageController : ControllerBase
     [HttpPost("/api/v1/messages/add")]
     public IActionResult PostMessage([FromBody] MessageRequest request)
     {
-        _context.Add<Post>(new Post { Message = request.Text });
+        _context.Add<Post>(new Post { Message = request.Message });
         _context.SaveChanges();
         return Ok(new { status = "OK" });
     }

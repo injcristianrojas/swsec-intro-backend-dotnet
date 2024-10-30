@@ -1,4 +1,5 @@
 public class MessageRequest
 {
-    public string Text { get; set; }
+    public int Id { get; set; }
+    public string Message { get; set; }
 }
