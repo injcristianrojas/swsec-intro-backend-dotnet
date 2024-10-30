@@ -6,6 +6,7 @@ using swsec_intro_backend_dotnet.Data;
 using swsec_intro_backend_dotnet.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
+var MyAllowCORS = "BaseCORSPolicy";
 
 builder.WebHost.UseUrls("http://localhost:9000", "https://localhost:9001");
 
@@ -16,6 +17,15 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(builder
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowCORS,
+        policy =>
+        {
+            policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        });
+});
 
 // Configure JWT Authentication
 builder.Services.AddAuthentication(options =>
@@ -52,6 +62,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(MyAllowCORS);
 
 app.UseAuthentication();
 app.UseAuthorization();
