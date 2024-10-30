@@ -7,6 +7,8 @@ using swsec_intro_backend_dotnet.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseUrls("http://localhost:9000", "https://localhost:9001");
+
 // Add services to the container.
 
 builder.Services.AddControllers();
