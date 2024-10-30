@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using swsec_intro_backend_dotnet.Data;
 using swsec_intro_backend_dotnet.Models;
@@ -5,6 +6,7 @@ using swsec_intro_backend_dotnet.Models;
 namespace swsec_intro_backend_dotnet.Controllers.v2;
 
 [ApiController]
+[Authorize]
 public class MessageController : ControllerBase
 {
     private readonly AppDbContext _context;
