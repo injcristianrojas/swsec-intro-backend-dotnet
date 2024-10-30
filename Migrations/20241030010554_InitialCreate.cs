@@ -22,6 +22,31 @@ namespace swsec_intro_backend_dotnet.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Password", "Type", "Username" },
+                values: new object[] { 1, "fio", 2, "zorzal" });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Password", "Type", "Username" },
+                values: new object[] { 2, "123", 1, "admin" });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Password", "Type", "Username" },
+                values: new object[] { 3, "fiofio", 2, "chincol" });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Password", "Type", "Username" },
+                values: new object[] { 4, "pah", 2, "tiuque" });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Password", "Type", "Username" },
+                values: new object[] { 5, "roji", 2, "loica" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -41,16 +41,37 @@ namespace swsec_intro_backend_dotnet.Migrations
                         new
                         {
                             Id = 1,
-                            Password = "default",
-                            Type = 1,
-                            Username = "admin"
+                            Password = "fio",
+                            Type = 2,
+                            Username = "zorzal"
                         },
                         new
                         {
                             Id = 2,
                             Password = "123",
+                            Type = 1,
+                            Username = "admin"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Password = "fiofio",
                             Type = 2,
-                            Username = "jperez"
+                            Username = "chincol"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Password = "pah",
+                            Type = 2,
+                            Username = "tiuque"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Password = "roji",
+                            Type = 2,
+                            Username = "loica"
                         });
                 });
 #pragma warning restore 612, 618
