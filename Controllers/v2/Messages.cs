@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using swsec_intro_backend_dotnet.Data;
 using swsec_intro_backend_dotnet.Models;
 
-namespace swsec_intro_backend_dotnet.Controllers;
+namespace swsec_intro_backend_dotnet.Controllers.v2;
 
 [ApiController]
 public class MessageController : ControllerBase
