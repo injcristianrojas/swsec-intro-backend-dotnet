@@ -492,3 +492,6 @@ $RECYCLE.BIN/
 
 # Torpedo
 TORPEDO.md
+
+# Depcheck
+dependency-check*
