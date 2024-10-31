@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using swsec_intro_backend_dotnet.Data;
 using swsec_intro_backend_dotnet.Models;
@@ -16,15 +17,21 @@ public class UserController : ControllerBase
         _context = context;
     }
 
-    [HttpGet("/api/v1/users/type/{type}")]
-    public List<User> GetByType(int type)
-    {
-        return _context.Users.FromSqlRaw($"SELECT * FROM users WHERE type = {type}").ToList();
-    }
-
     [HttpGet("/api/v1/users/name/{username}")]
-    public List<User> GetByUsername(string username)
+    public IActionResult GetByUsername(string username)
     {
-        return _context.Users.FromSqlRaw($"SELECT * FROM users WHERE username = '{username}'").ToList();
+        var returnList = new List<object>();
+        using (var connection = _context.Database.GetDbConnection())
+        {
+            connection.Open();
+            using var command = connection.CreateCommand();
+            command.CommandText = "SELECT Username, Type FROM users WHERE username = '" + username + "'";
+            using SqliteDataReader reader = (SqliteDataReader)command.ExecuteReader();
+            while (reader.Read())
+            {
+                returnList.Add(new {Username = reader[0], Type = reader[1]});
+            }
+        }
+        return Ok(returnList);
     }
 }

@@ -14,7 +14,7 @@ namespace swsec_intro_backend_dotnet.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<User>().HasData(new User{Id = 1, Username = "zorzal", Password = "fio", Type = 2});
-            modelBuilder.Entity<User>().HasData(new User{Id = 2, Username = "admin", Password = "123", Type = 1});
+            modelBuilder.Entity<User>().HasData(new User{Id = 2, Username = "admin", Password = "2mns8uu5w3vnut", Type = 1});
             modelBuilder.Entity<User>().HasData(new User{Id = 3, Username = "chincol", Password = "fiofio", Type = 2});
             modelBuilder.Entity<User>().HasData(new User{Id = 4, Username = "tiuque", Password = "pah", Type = 2});
             modelBuilder.Entity<User>().HasData(new User{Id = 5, Username = "loica", Password = "roji", Type = 2});

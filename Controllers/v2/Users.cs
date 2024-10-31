@@ -18,8 +18,9 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("/api/v2/users/type/{type}")]
-    public List<User> GetByType(int type)
+    public IActionResult GetByType(int type)
     {
-        return _context.Users.FromSqlRaw($"SELECT * FROM users WHERE type = {type}").ToList();
+        var result = _context.Users.FromSqlRaw($"SELECT * FROM users WHERE type = {type}").Select(e => new {e.Username, e.Type}).ToList();
+        return Ok(result);
     }
 }
