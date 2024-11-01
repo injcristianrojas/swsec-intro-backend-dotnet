@@ -7,5 +7,5 @@ dev:
 	ASPNETCORE_ENVIRONMENT=Development dotnet run
 
 reset_db:
-	dotnet ef database drop
+	dotnet ef database drop -f
 	dotnet ef database update
