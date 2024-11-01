@@ -4,7 +4,6 @@ using swsec_intro_backend_dotnet.Helpers;
 namespace swsec_intro_backend_dotnet.Controllers;
 
 [ApiController]
-
 public class HealthCheckController : ControllerBase
 {
     [HttpGet("/healthcheck/{file?}")]
