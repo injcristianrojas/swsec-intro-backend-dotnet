@@ -1,4 +1,4 @@
-all: dev
+all: prod
 
 prod:
 	dotnet run
