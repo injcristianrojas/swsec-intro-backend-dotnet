@@ -8,7 +8,7 @@ using swsec_intro_backend_dotnet.Helpers;
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowCORS = "BaseCORSPolicy";
 
-builder.WebHost.UseUrls("http://localhost:9000", "https://localhost:9001");
+builder.WebHost.UseUrls("http://0.0.0.0:9000", "https://0.0.0.0:9001");
 
 // Add services to the container.
 
