@@ -5,7 +5,6 @@ WORKDIR /app
 # Copy the remaining files and build the application
 COPY . ./
 RUN dotnet restore
-RUN dotnet dev-certs https
 ENV PATH="$PATH:/root/.dotnet/tools"
 RUN dotnet tool restore
 RUN dotnet ef database update
