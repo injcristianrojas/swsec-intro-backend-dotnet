@@ -24,7 +24,7 @@ If you want to run the app in Development mode (which includes Swagger data):
 ASPNETCORE_ENVIRONMENT=Development dotnet run
 ```
 
-There¿'s a Makefile available if you want better support for this.
+There's a Makefile available if you want better support for this.
 
 ## Reset database
 
