@@ -4,10 +4,8 @@ WORKDIR /app
 
 # Copy the remaining files and build the application
 COPY . ./
-RUN dotnet restore
 ENV PATH="$PATH:/root/.dotnet/tools"
-RUN dotnet tool restore
-RUN dotnet ef database update
+RUN dotnet restore && dotnet tool restore && dotnet ef database update
 
 # Expose the port your application runs on
 EXPOSE 9000 9001
