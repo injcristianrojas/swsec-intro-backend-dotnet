@@ -28,8 +28,7 @@ There's a Makefile available if you want better support for this.
 
 ## Reset database
 
-```
+```shell
 dotnet ef database drop
 dotnet ef database update
 ```
-
