@@ -1,9 +1,9 @@
-# SWSEC-INTRO .NET 6.0 backend
+# SWSEC-INTRO .NET 8.0 backend
 
 ## Setup
 
-Be sure to use a .NET 6.0 SDK. This project has been tested in a Fedora Linux
-machine with dotnet installed (`sudo dnf install dotnet-sdk-6.0`). Create the
+Be sure to use a .NET 8.0 SDK. This project has been tested in a Fedora Linux
+machine with dotnet installed (`sudo dnf install dotnet-sdk-8.0`). Create the
 database and build the app using:
 
 ```shell
